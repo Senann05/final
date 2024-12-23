@@ -14,7 +14,7 @@ return(
 
 <button className='homepagebutton'>Search</button>
 </div>
-<Link>Advanced Filter &#11165;</Link>
+<Link>Advanced Filter &#11167;</Link>
 
 <div className='coincontainer'>
     <div>
