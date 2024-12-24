@@ -10,6 +10,8 @@ import Regist from './regist/Regist.jsx';
 import List from './list/List.jsx'
 import Edit from './edit/Edit.jsx'
 import Description from './description/Description.jsx'
+import Admin from './adminpanel/Admin.jsx'
+import Admin2 from './adminpanel2/Admin2.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -22,6 +24,8 @@ createRoot(document.getElementById('root')).render(
       <Route path="/list" element={<List />} />
       <Route path="/edit" element={<Edit />} />
       <Route path="/description" element={<Description />} />
+      <Route path="/admin" element={<Admin/>} />
+      <Route path="/admin2" element={<Admin2/>} />
     </Routes>
   </BrowserRouter>,
 )

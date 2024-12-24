@@ -22,7 +22,29 @@ text-decoration-skip-ink: none;
     margin-top: 30px;
 }
 .editcont{
-    margin-left: 15px;
+    margin-left: 30px;
+}
+.edbut{
+    background-color: #833AE0;
+    color: white;
+}
+.addpics{
+    display: flex;
+    margin-top: 25px;
+}
+.addnewcoin{
+margin-top: 50px;
+margin-left: 45px;
+font-family: Roboto;
+font-size: 14px;
+font-weight: 300;
+line-height: 15.26px;
+text-align: left;
+text-decoration-line: underline;
+text-decoration-style: solid;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
 }
 h3{
     margin-left: 29px;
@@ -34,7 +56,7 @@ h3{
 .dif{
     display: flex;
 }
-p{
+.pedit{
 width: 224px;
 height: 95px;
 gap: 0px;

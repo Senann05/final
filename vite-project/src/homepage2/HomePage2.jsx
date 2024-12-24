@@ -12,7 +12,7 @@ const HomePage2 = () =>{
 
 <button className='homepagebutton'>Search</button>
 </div>
-<Link>Advanced Filter &#11165;</Link>
+<Link to="/home" className="advancedFilterLink">Advanced Filter &#11165;</Link>
 
 <div className='imputs'>
 

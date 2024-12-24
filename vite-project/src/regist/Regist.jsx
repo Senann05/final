@@ -1,4 +1,6 @@
 import './Regist.css'
+import {Link} from 'react-router-dom';
+
 
 const Regist = ()=>{
 return(
@@ -16,7 +18,7 @@ return(
     <label htmlFor="password">Confirm Password</label>
     <input className="input-password" id="password" name="password" type="password" />
   </div>
-  <button className="loginbutton">Regist</button>
+  <button className="loginbutton"><Link to="/edit" className="gfvdsjhjd">Regist</Link></button>
 </div>
 );
 }
