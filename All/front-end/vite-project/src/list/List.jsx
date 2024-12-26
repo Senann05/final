@@ -10,7 +10,7 @@ import six from '../assets/26.svg'
 const List = ()=>{
 return(
     <div>
-    <div className='listcontainer'>
+    <div className='homepage2container'>
         <div>
 <h1>List of the coins<p className='headerp'><Link to="/home" className="advancedFilterLink">Homepage — List of the coins</Link></p></h1>
 
@@ -19,7 +19,7 @@ return(
 
 <button className='homepagebutton'>Search</button>
 </div>
-<Link to="/home" className="advancedFilterLink" >Advanced Filter &#11167;</Link>
+<Link to="/home2" className="advancedFilterLink" >Advanced Filter &#11167;</Link>
 
 <div className='coins'>
 <div className='coin-left'>

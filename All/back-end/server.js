@@ -71,16 +71,17 @@ app.get('/coins/:id', (req, res) => {
 });
 
 app.get('/coin_types', (req, res) => {
-    const query = 'SELECT * FROM coin_types'; 
+    const query = 'SELECT id, name, image_for FROM coin_types'; // Убедитесь, что `image_url` включено
     connection.query(query, (error, results) => {
         if (error) {
-            console.error('Error fetching coin types:', error);
-            res.status(500).send({ error: 'Ошибка при получении категорий монет' });
+            console.error('Ошибка при выполнении запроса:', error);
+            res.status(500).send({ error: 'Ошибка сервера' });
         } else {
             res.status(200).json(results);
         }
     });
 });
+
 // app.get('/coins_by_type/:typeId', (req, res) => {
 //     const { typeId } = req.params;
 //     const query = 'SELECT * FROM coins WHERE type_id = ?'; 
@@ -130,57 +131,86 @@ app.get('/coins_by_type/:typeId', (req, res) => {
 });
 
 
-app.get('/filtered_coins', (req, res) => {
-    const { country, metal, quality, priceFrom, priceTo, yearFrom, yearTo } = req.query;
+// app.get('/filtered_coins', (req, res) => {
+//     const { country, metal, quality, priceFrom, priceTo, yearFrom, yearTo } = req.query;
 
-    let query = 'SELECT * FROM coins WHERE 1=1';
-    const params = [];
+//     let query = 'SELECT * FROM coins WHERE 1=1';
+//     const params = [];
 
-    if (country) {
-        query += ' AND issuing_country = ?';
-        params.push(country);
-    }
+//     if (country) {
+//         query += ' AND issuing_country = ?';
+//         params.push(country);
+//     }
 
-    if (metal) {
-        query += ' AND composition = ?';
-        params.push(metal);
-    }
+//     if (metal) {
+//         query += ' AND composition = ?';
+//         params.push(metal);
+//     }
 
-    if (quality) {
-        query += ' AND quality = ?';
-        params.push(quality);
-    }
+//     if (quality) {
+//         query += ' AND quality = ?';
+//         params.push(quality);
+//     }
 
-    if (priceFrom) {
-        query += ' AND price >= ?';
-        params.push(priceFrom);
-    }
+//     if (priceFrom) {
+//         query += ' AND price >= ?';
+//         params.push(priceFrom);
+//     }
 
-    if (priceTo) {
-        query += ' AND price <= ?';
-        params.push(priceTo);
-    }
+//     if (priceTo) {
+//         query += ' AND price <= ?';
+//         params.push(priceTo);
+//     }
 
-    if (yearFrom) {
-        query += ' AND year >= ?'; 
-        params.push(yearFrom);
-    }
+//     if (yearFrom) {
+//         query += ' AND year >= ?'; 
+//         params.push(yearFrom);
+//     }
 
-    if (yearTo) {
-        query += ' AND year <= ?'; 
-        params.push(yearTo);
-    }
+//     if (yearTo) {
+//         query += ' AND year <= ?'; 
+//         params.push(yearTo);
+//     }
 
-    connection.query(query, params, (error, results) => {
-        if (error) {
-            console.error('Error fetching filtered coins:', error);
-            res.status(500).send({ error: 'Ошибка при фильтрации монет' });
-        } else {
-            res.status(200).json(results);
-        }
-    });
+//     connection.query(query, params, (error, results) => {
+//         if (error) {
+//             console.error('Error fetching filtered coins:', error);
+//             res.status(500).send({ error: 'Ошибка при фильтрации монет' });
+//         } else {
+//             res.status(200).json(results);
+//         }
+//     });
+// });
+
+app.get('/filters', (req, res) => {
+    const queries = [
+        'SELECT DISTINCT issuing_country FROM coins',
+        'SELECT DISTINCT composition AS metal FROM coins',
+        'SELECT DISTINCT quality FROM coins',
+    ];
+
+    Promise.all(
+        queries.map((query) => {
+            return new Promise((resolve, reject) => {
+                connection.query(query, (error, results) => {
+                    if (error) reject(error);
+                    resolve(results.map((row) => Object.values(row)[0]));
+                });
+            });
+        })
+    )
+        .then(([countries, metals, qualities]) => {
+            res.status(200).json({
+                countries,
+                metals,
+                qualities,
+            });
+        })
+        .catch((err) => {
+            console.error('Ошибка при получении фильтров:', err);
+            res.status(500).send({ error: 'Ошибка при получении фильтров' });
+        });
 });
-
 
 
 

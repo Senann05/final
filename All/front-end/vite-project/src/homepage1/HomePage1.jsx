@@ -8,20 +8,18 @@ const HomePage1 = ()=>{
 
 return(
 <div>
-<div className='homepagecontainer'>
+<div className='homepage2container'>
 
 
 
-<h1 className='whichlink'>Homepage <Link to="/login" className='linkinh1'>Login</Link> <Link to="/regist" className='linkinh12'>Regist</Link></h1>
+<h1 className='whichlink'>Homepage</h1>
 
 <label className='label1' htmlFor="inputfield">Input Field</label>
 <input className="input-field" id="inputfield" name="inputfield" type="text" />
 <button className='homepagebutton'>Search</button>
 
 </div>
-<Link to="/home2" className="advancedFilterLink">
-        Advanced Filter &#11167;
-      </Link>
+<Link to="/home2" className="advanced12FilterLink">Advanced Filter &#11167;</Link>
 
 <div className='coincontainer'>
     <div>

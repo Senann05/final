@@ -1,16 +1,6 @@
-/* .inputfield{
-  width: 374px;
-  height: 40px;
-  margin: 10px 0; 
-  padding: 8px; 
-  border: 1px solid #434343;
-  border-radius: 2px;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-} */
+ .advanced12FilterLink{
+  margin-left: 15px;
+ }
 .homeH1{
 width: 300px;
 height: 30px;
@@ -78,22 +68,69 @@ border: 1px solid #000000
   margin-left: 1100px;
   font-size:large;
   display: flex;
-  /* background-color: #833AE0;
-  color: white;
-  border: 1px solid black;
-  border-radius: 10px; */
 }
 .linkinh12{
-  /* box-sizing: border-box;
-  border: 1px solid black; */
+  
   width: 8000px;
   height: 50px;
   margin-left: 20px;
   font-size:large;
   display: flex;
-  /* background-color: #833AE0; */
-  /* color: white; */
+ 
 }
 .whichlink{
   display: flex;
+}
+@media screen and (max-width: 780px) {
+  .coincontainer {
+    flex-direction: column; 
+    gap: 20px; 
+    margin-left: 0; 
+  }
+
+  .inputfield,
+  .input-field {
+    width: 90%; 
+    margin: 10px auto; 
+  }
+
+  .homepagebutton {
+    width: 100%;
+    max-width: 200px; 
+    margin: 10px auto;
+  }
+
+  .homeH1 {
+    font-size: 24px; 
+    text-align: center; 
+    width: auto; 
+    margin: 0 auto; 
+  }
+
+  .label1 {
+    margin-right: 0; 
+    text-align: center; 
+  }
+
+  .linkinh1,
+  .linkinh12 {
+    font-size: medium; 
+    margin: 10px auto; 
+    display: block; 
+  }
+
+  .whichlink {
+    flex-direction: column; 
+    gap: 10px;
+  }
+
+  .log-reg {
+    margin-left: auto;
+    margin-right: auto; 
+  }
+
+  .imghome1 {
+    max-width: 100%; 
+    height: auto; 
+  }
 }

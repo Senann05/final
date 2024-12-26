@@ -60,3 +60,51 @@ text-underline-position: from-font;
 text-decoration-skip-ink: none;
 
 }
+@media screen and (max-width: 780px) {
+    .headerp {
+      width: 100%; 
+      font-size: 12px; 
+      margin-left: 0; 
+    }
+  
+    .listcontainer {
+      margin-left: 10px; 
+    }
+  
+    .coins {
+      flex-direction: column; 
+    }
+  
+    .coin-right {
+      margin-left: 0;
+      margin-top: 10px; 
+    }
+  
+    .firsth2 {
+      margin-left: 0; 
+      font-size: 18px; 
+    }
+  
+    p {
+      width: 100%;
+      font-size: 12px; 
+      margin-left: 0; 
+    }
+  
+    .coinleft {
+      display: block; 
+      margin-top: 20px;
+    }
+  
+    .label1 {
+      font-size: 14px; 
+      margin-top: 30px; 
+    }
+  
+    h1 {
+      width: 100%; 
+      font-size: 32px; 
+      margin-left: 0; 
+    }
+  }
+  

@@ -21,7 +21,7 @@ return(
 <p className='cont2'>In the center of the coin reverse is a Canadian beaver on a rock sticking out of the water. At the top is a semicircle with the inscription "5 cents" between two maple leaves. At the bottom in two lines is the inscription CANADA (CANADA) and the year of minting.</p>
 
 <img className='table' src={table}/>
-<div className='link'><Link>Back to the list</Link></div>
+<div className='link'><Link to="/list">Back to the list</Link></div>
 </div>
 </div>
 
