@@ -44,10 +44,6 @@
 //       );
 // };
 // export default Admin2;
-
-
-
-
 import './Admin2.css';
 import img from '../assets/edit.svg';
 import { useState } from 'react';
@@ -71,7 +67,7 @@ const Admin2 = () => {
   };
 
   const handleSave = () => {
-    // "Edit" səhifəsinə məlumat ötürülür
+    // "Edit" səhifəsinə yeni coin məlumatını ötürürük
     navigate('/edit', { state: { newCoin } });
   };
 

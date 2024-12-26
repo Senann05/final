@@ -10,11 +10,11 @@ const Login = () => {
 
     // Daxil ediləcək login məlumatları
     const validLogin = 'admin';
-    const validPassword = 'password123';
+    const validPassword = '123';
 
     if (login === validLogin && password === validPassword) {
       alert('Login successful!');
-      window.location.href = "/edit"; // Redirect to the edit page
+      window.location.href = "/home"; // Redirect to the edit page
     } else {
       alert('Incorrect login or password!');
     }

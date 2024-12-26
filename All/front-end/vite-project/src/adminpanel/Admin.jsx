@@ -48,7 +48,6 @@
 
 
 
-
 import './Admin.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -57,7 +56,7 @@ const Admin = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Edit-dən gələn məlumat
+  // Extract coin data from location.state (received from Edit component)
   const { coinId, title, description } = location.state || {};
 
   const [coinData, setCoinData] = useState({
@@ -75,7 +74,7 @@ const Admin = () => {
   });
 
   const handleSave = () => {
-    // Yenilənmiş məlumatları Edit səhifəsinə göndər
+    // Send the updated coin data back to Edit component
     navigate('/edit', {
       state: {
         updatedCoin: {

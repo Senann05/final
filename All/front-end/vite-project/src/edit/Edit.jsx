@@ -59,6 +59,10 @@ import { useState, useEffect } from 'react';
 const Edit = () => {
   const location = useLocation();
 
+  // Get updated coin data from location.state (which can contain a new coin or updated coin)
+  const updatedCoin = location.state?.updatedCoin;
+  const newCoin = location.state?.newCoin;
+
   const [coins, setCoins] = useState([
     {
       id: 1,
@@ -77,10 +81,21 @@ const Edit = () => {
   ]);
 
   useEffect(() => {
-    if (location.state?.newCoin) {
-      setCoins((prevCoins) => [...prevCoins, location.state.newCoin]);
+    if (updatedCoin) {
+      setCoins((prevCoins) =>
+        prevCoins.map((coin) =>
+          coin.id === updatedCoin.id
+            ? { ...coin, title: updatedCoin.title, description: updatedCoin.description }
+            : coin
+        )
+      );
     }
-  }, [location.state]);
+
+    if (newCoin) {
+      // Adding the new coin to the list
+      setCoins((prevCoins) => [...prevCoins, newCoin]);
+    }
+  }, [updatedCoin, newCoin]);
 
   const handleDelete = (id) => {
     setCoins((prevCoins) => prevCoins.filter((coin) => coin.id !== id));
@@ -103,12 +118,12 @@ const Edit = () => {
               <p className="pedit">{coin.description}</p>
               <div className="buts">
                 <button className="edbut">
-                  <Link to="/admin" state={coin}>
-                    edit
+                  <Link to="/admin" state={{ coinId: coin.id, title: coin.title, description: coin.description }}>
+                    Edit
                   </Link>
                 </button>
                 <button className="edbut" onClick={() => handleDelete(coin.id)}>
-                  delete
+                  Delete
                 </button>
               </div>
             </div>
@@ -128,3 +143,4 @@ const Edit = () => {
 };
 
 export default Edit;
+

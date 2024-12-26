@@ -33,7 +33,7 @@ return(
 </div>
 
 <div className='coinleft'>
-<Link to="/description">
+<Link to="/des2">
         <img src={two} className='img2'></img>
         </Link>
         <span><h2 className='firsth2'>Looney</h2>
@@ -41,7 +41,7 @@ return(
 </div>
 
 <div className='coinleft'>
-<Link to="/description">
+<Link to="/des3">
         <img src={three} className='img3'></img>
         </Link>
         <span><h2 className='firsth2'>Jefferson</h2>
@@ -52,7 +52,7 @@ return(
 </div>
 <div className='coin-right'>
 <div className='coinleft'>
-<Link to="/description">
+<Link to="/des4">
         <img src={four} className='img4'></img>
         </Link>
         <span><h2 className='firsth2'>Kennedy</h2>
@@ -60,7 +60,7 @@ return(
 </div>
 
 <div className='coinleft'>
-<Link to="/description">
+<Link to="/des5">
         <img src={five} className='img5'></img>
         </Link>
         <span><h2 className='firsth2'>Canadian Cent</h2>
@@ -68,7 +68,7 @@ return(
 </div>
 
 <div className='coinleft'>
-<Link to="/description">
+<Link to="/des6">
         <img src={six} className='img6'></img>
 </Link>
         <span><h2 className='firsth2'>A penny </h2>
